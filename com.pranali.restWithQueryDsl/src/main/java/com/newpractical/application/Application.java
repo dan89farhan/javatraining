@@ -1,4 +1,4 @@
-package com.pranali.restWithQueryDsl.com.pranali.restWithQueryDsl;
+package com.newpractical.application;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package com.pranali.restWithQueryDsl.com.pranali.restWithQueryDsl;
+package com.newpractical.application;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

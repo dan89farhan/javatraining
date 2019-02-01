@@ -1,4 +1,4 @@
-package com.pranali.restWithQueryDsl.com.pranali.restWithQueryDsl;
+package com.newpractical.application.Implementation;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -8,7 +8,7 @@ import javax.persistence.NamedNativeQuery;
 import org.springframework.data.annotation.Transient;
 
 @Entity
-public class CategoryCascade {
+public class CategoryStructure {
 	
 	@Id
 	private int categoryId;
@@ -34,7 +34,7 @@ public class CategoryCascade {
 		this.parentId = parentId;
 	}
 	
-	public CategoryCascade(int categoryId, String categoryName, int parentId) {
+	public CategoryStructure(int categoryId, String categoryName, int parentId) {
 		super();
 		this.categoryId = categoryId;
 		this.categoryName = categoryName;
@@ -47,7 +47,7 @@ public class CategoryCascade {
 				+ categoryName + ", parentId=" + parentId + "]";
 	}
 	
-	public CategoryCascade()
+	public CategoryStructure()
 	{}
 	
 

@@ -1,4 +1,4 @@
-package com.pranali.restWithQueryDsl.com.pranali.restWithQueryDsl;
+package com.newpractical.application.Implementation;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,21 +8,21 @@ import java.util.Map;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ConvertToJson {
+public class CreateCategoryHierarchy {
 	
 	List<CategoryToJson> listOfCat;
-	public ConvertToJson() {
+	public CreateCategoryHierarchy() {
 	}
 	
-	public ConvertToJson(List<CategoryCascade> listOfObj) {
+	public CreateCategoryHierarchy(List<CategoryStructure> listOfObj) {
 		super();
 		System.out.println(listOfCat);
 	}
 	
-	public List<CategoryToJson> createTree(List<CategoryCascade> listOfObj){
+	public List<CategoryToJson> createTree(List<CategoryStructure> listOfObj){
 		Map<Integer, List<Integer>> parentChildMap = new HashMap<Integer, List<Integer>>();
-		Map<Integer, CategoryCascade> objectMap = new HashMap<Integer, CategoryCascade>();;
-		for(CategoryCascade c: listOfObj)
+		Map<Integer, CategoryStructure> objectMap = new HashMap<Integer, CategoryStructure>();;
+		for(CategoryStructure c: listOfObj)
 		{
 			if(parentChildMap.containsKey(c.getParentId())){
 				parentChildMap.get(c.getParentId()).add(c.getCategoryId());
@@ -51,7 +51,7 @@ public class ConvertToJson {
 		return listCatToJson;
 	}
 
-	public CategoryToJson createCategoryToJsonObject(CategoryCascade cat, Map<Integer,List<Integer>> parentChildMap, Map<Integer, CategoryCascade> objectMap){
+	public CategoryToJson createCategoryToJsonObject(CategoryStructure cat, Map<Integer,List<Integer>> parentChildMap, Map<Integer, CategoryStructure> objectMap){
 		CategoryToJson catToJsonObj = new CategoryToJson(cat.getCategoryName(), !parentChildMap.containsKey(cat.getCategoryId()), new ArrayList<CategoryToJson>());
 		if(parentChildMap.containsKey(cat.getCategoryId()))
 		{
@@ -68,7 +68,7 @@ public class ConvertToJson {
 
 	public static void main(String args[])
 	{
-		new ConvertToJson();
+		new CreateCategoryHierarchy();
 	}
 	
 	

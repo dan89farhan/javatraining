@@ -1,4 +1,4 @@
-package com.pranali.restWithQueryDsl.com.pranali.restWithQueryDsl;
+package com.newpractical.application.model;
 
 import java.util.Date;
 
@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
-public class ProductPojo {
+public class Product {
 
 	@Id
 	@GeneratedValue
@@ -79,7 +79,7 @@ public class ProductPojo {
 		this.productDescription = productDescription;
 	}
 	
-	public ProductPojo(String productName, int productPrice, String productBrand,
+	public Product(String productName, int productPrice, String productBrand,
 			String productCategory, Date mfgDate, String productType,
 			String productDescription) {
 		super();
@@ -92,7 +92,7 @@ public class ProductPojo {
 		this.productDescription = productDescription;
 	}
 	
-	public ProductPojo(){
+	public Product(){
 		
 	}
 	

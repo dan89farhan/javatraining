@@ -1,10 +1,10 @@
-package com.pranali.restWithQueryDsl.com.pranali.restWithQueryDsl;
+package com.newpractical.application.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class CategoryPojo {
+public class Category {
 
 	@Id
 	private int categoryId;
@@ -21,13 +21,13 @@ public class CategoryPojo {
 	public void setCategoryName(String categoryName) {
 		this.categoryName = categoryName;
 	}
-	public CategoryPojo(int categoryId, String categoryName) {
+	public Category(int categoryId, String categoryName) {
 		super();
 		this.categoryId = categoryId;
 		this.categoryName = categoryName;
 	}
 	
-	public CategoryPojo() {
+	public Category() {
 		// TODO Auto-generated constructor stub
 	}
 	

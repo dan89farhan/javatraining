@@ -1,10 +1,10 @@
-package com.pranali.restWithQueryDsl.com.pranali.restWithQueryDsl;
+package com.newpractical.application.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class BrandPojo {
+public class Brand {
 	@Id
 	private int brandId;
 	private String brandName;
@@ -20,7 +20,7 @@ public class BrandPojo {
 	public void setBrandName(String brandName) {
 		this.brandName = brandName;
 	}
-	public BrandPojo(int brandId, String brandName) {
+	public Brand(int brandId, String brandName) {
 		super();
 		this.brandId = brandId;
 		this.brandName = brandName;
@@ -31,7 +31,7 @@ public class BrandPojo {
 				+ "]";
 	}
 	
-	public BrandPojo() {
+	public Brand() {
 		// TODO Auto-generated constructor stub
 	}
 	
