@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Backbone JS</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="lib/modernizr-2.6.2.min.js"></script>
+    
+    <script>
+	$(function() {
+		$("#datepicker-12").datepicker();
+		$("#datepicker-12").datepicker("setDate", "10w+1");
+	});
+	</script>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .description {
+            display: block;
+            width: 100px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        tr:hover {
+
+            background-color: #FFE097;
+            box-shadow: 10px 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="formContainer">
+        Product Brand:
+        <select id='productBrand'></select>
+        </br>
+        <!-- <select id="brandContainer"></select> -->
+        Product Category:
+        <div id="categoryContainer"></div>
+    </div>
+
+    <div>
+        <table id="tableContainer">
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Brand</th>
+                <th>Category</th>
+                <th>Date</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </table>
+    </div>
+
+    <script src="lib/jquery-min.js"></script>
+    <script src="lib/underscore-min.js"></script>
+    <script src="lib/backbone-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="main.js"></script>
+    <!-- <script src="dummy.js"></script> -->
+
+
+</body>
+
+</html>
