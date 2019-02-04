@@ -13,7 +13,7 @@ public class Product {
 
 	@Id
 	@GeneratedValue
-	private int productId;
+	private int id;
 	
 	@JsonProperty("name")
 	private String productName;
@@ -36,6 +36,14 @@ public class Product {
 	@JsonProperty("description")
 	private String productDescription;
 	
+	
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getProductName() {
 		return productName;
 	}

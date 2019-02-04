@@ -32,7 +32,7 @@ public class ProductDaoImplementation implements ProductDao {
 
 		final JPAQuery<Product> prodQuery = new JPAQuery<Product>(em);
 		final QProduct qProduct = QProduct.product;
-		return prodQuery.from(qProduct).where(qProduct.productId.eq(id))
+		return prodQuery.from(qProduct).where(qProduct.id.eq(id))
 				.fetchOne();
 	}
 
@@ -62,5 +62,10 @@ public class ProductDaoImplementation implements ProductDao {
 				.where(qproduct.productBrand.eq(brand_name).or(
 						qproduct.productPrice.between(lower, upper))).fetch();
 
+	}
+
+	@Override
+	public void updateProduct(Product p) {
+	em.merge(p);
 	}
 }

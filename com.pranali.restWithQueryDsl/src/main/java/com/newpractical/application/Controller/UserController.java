@@ -22,7 +22,7 @@ public class UserController {
 	@RequestMapping(value = "/authenticate",  method= RequestMethod.POST)
 	public JsonUser Authenticate(@RequestParam("userName")String username,@RequestParam("password")String password){
 		String status=ud.AuthenticateUser(username,password);
-		System.out.println(status);
+		//System.out.println(status);
 		JsonUser ju=new JsonUser("status",status);
 		return ju;
 	}
