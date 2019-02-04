@@ -47,9 +47,9 @@ public class ProductController {
 
 	@CrossOrigin
 	@RequestMapping("/getP")
-	public Product getP(){
+	public List<Product> getP(@RequestParam("brand_name") String brand_name,@RequestParam("lower") String lower,@RequestParam("upper") String upper){
 		System.out.println("working product get");
-		return prodDao.get();
+		return prodDao.get(brand_name,lower,upper);
 	}
 	
 }

@@ -15,14 +15,13 @@ import com.newpractical.application.model.Product;
 import com.newpractical.application.model.QProduct;
 import com.querydsl.jpa.impl.JPAQuery;
 
-
 @Transactional
 @Repository
 public class ProductDaoImplementation implements ProductDao {
 
 	@PersistenceContext
 	private EntityManager em;
-	
+
 	@Override
 	public void saveProduct(Product p) {
 		em.persist(p);
@@ -30,17 +29,18 @@ public class ProductDaoImplementation implements ProductDao {
 
 	@Override
 	public Product getProductFromDbById(int id) {
-		
+
 		final JPAQuery<Product> prodQuery = new JPAQuery<Product>(em);
 		final QProduct qProduct = QProduct.product;
-		return prodQuery.from(qProduct).where(qProduct.productId.eq(id)).fetchOne();
+		return prodQuery.from(qProduct).where(qProduct.productId.eq(id))
+				.fetchOne();
 	}
 
 	@Override
 	public void deleteProduct(int id) {
 		Product p = getProductFromDbById(id);
 		em.remove(p);
-		
+
 	}
 
 	@Override
@@ -51,10 +51,16 @@ public class ProductDaoImplementation implements ProductDao {
 	}
 
 	@Override
-	public Product get(){
+	public List<Product> get(String brand_name, String stringLower,
+			String stringUpper) {
+		int lower = Integer.parseInt(stringLower);
+		int upper = Integer.parseInt(stringUpper);
 		final JPAQuery<Product> pQuery = new JPAQuery<Product>(em);
 		final QProduct qproduct = QProduct.product;
-		return pQuery.from(qproduct).where(qproduct.productBrand.eq("nike").or(qproduct.productPrice.between(60,100))).fetchOne();
-		
+		return pQuery
+				.from(qproduct)
+				.where(qproduct.productBrand.eq(brand_name).or(
+						qproduct.productPrice.between(lower, upper))).fetch();
+
 	}
 }

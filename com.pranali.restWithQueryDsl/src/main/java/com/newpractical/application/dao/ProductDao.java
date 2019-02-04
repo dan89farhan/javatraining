@@ -10,5 +10,5 @@ public interface ProductDao {
 	public void saveProduct(Product p);
 	public Product getProductFromDbById(int id);
 	public void deleteProduct(int id);
-	public Product get();
+	public List<Product> get(String brand_name,String lower,String upper);
 }
