@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,7 +17,7 @@ import com.querydsl.jpa.impl.JPAQuery;
 
 
 @Transactional
-@Service
+@Repository
 public class ProductDaoImplementation implements ProductDao {
 
 	@PersistenceContext

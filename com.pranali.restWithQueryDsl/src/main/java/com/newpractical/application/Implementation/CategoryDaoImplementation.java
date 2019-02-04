@@ -6,14 +6,16 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
+
 import com.newpractical.application.dao.CategoryDao;
 import com.newpractical.application.model.Category;
 import com.newpractical.application.model.QCategory;
 import com.querydsl.jpa.impl.JPAQuery;
 
 @org.springframework.transaction.annotation.Transactional
-@Service
+@Repository
 
 public class CategoryDaoImplementation implements CategoryDao {
 	
