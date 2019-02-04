@@ -7,6 +7,8 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 
 import com.newpractical.application.dao.UserDao;
+import com.newpractical.application.model.Product;
+import com.newpractical.application.model.QProduct;
 import com.newpractical.application.model.QUser;
 import com.newpractical.application.model.User;
 import com.querydsl.jpa.impl.JPAQuery;
@@ -31,5 +33,7 @@ public class UserDaoImp implements UserDao{
 		return "false";	
 		
 	}
+	
+	
 
 }

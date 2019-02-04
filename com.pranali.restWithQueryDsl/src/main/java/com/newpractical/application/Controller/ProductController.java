@@ -43,4 +43,13 @@ public class ProductController {
 		prodDao.deleteProduct(id);
 		System.out.println("working");
 	}
+	
+
+	@CrossOrigin
+	@RequestMapping("/getP")
+	public Product getP(){
+		System.out.println("working product get");
+		return prodDao.get();
+	}
+	
 }

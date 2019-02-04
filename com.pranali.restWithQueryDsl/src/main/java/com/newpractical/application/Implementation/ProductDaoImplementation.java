@@ -50,4 +50,11 @@ public class ProductDaoImplementation implements ProductDao {
 		return prodQuery.from(qProduct).fetch();
 	}
 
+	@Override
+	public Product get(){
+		final JPAQuery<Product> pQuery = new JPAQuery<Product>(em);
+		final QProduct qproduct = QProduct.product;
+		return pQuery.from(qproduct).where(qproduct.productBrand.eq("nike").or(qproduct.productPrice.between(60,100))).fetchOne();
+		
+	}
 }
